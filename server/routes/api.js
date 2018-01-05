@@ -5,7 +5,7 @@ const ObjectID = require("mongodb").ObjectID;
 
 // Connect
 const connection = (closure) => {
-    return MongoClient.connect("mongodb://localhost:27017/mean", (err, db) => {
+    return MongoClient.connect("mongodb://demo:demo@demo-shard-00-00-hdhrb.mongodb.net:27017,demo-shard-00-01-hdhrb.mongodb.net:27017,demo-shard-00-02-hdhrb.mongodb.net:27017/test?ssl=true&replicaSet=demo-shard-0&authSource=admin", (err, db) => {
         if (err) return console.log(err);
 
         closure(db);
